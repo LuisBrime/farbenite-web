@@ -1,0 +1,14 @@
+{
+    "master": {
+        "awscloudformation": {
+            "AuthRoleName": "farbenite-web-master-20190729125529-authRole",
+            "UnauthRoleArn": "arn:aws:iam::974389271027:role/farbenite-web-master-20190729125529-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::974389271027:role/farbenite-web-master-20190729125529-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "farbenite-web-master-20190729125529-deployment",
+            "UnauthRoleName": "farbenite-web-master-20190729125529-unauthRole",
+            "StackName": "farbenite-web-master-20190729125529",
+            "StackId": "arn:aws:cloudformation:us-east-1:974389271027:stack/farbenite-web-master-20190729125529/0db55930-b22a-11e9-aa0c-128a65397f5a"
+        }
+    }
+}
