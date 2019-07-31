@@ -1,10 +1,31 @@
 import React, { Component } from 'react';
-import { Box, Grid, Heading, ResponsiveContext } from 'grommet';
+import { Box, Button, Grid, Heading, ResponsiveContext } from 'grommet';
+import { Menu } from 'grommet-icons';
+
 import RoutedAnchor from '../components/RoutedAnchor';
 
 class Main extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            show: false,
+        };
+    }
+
     render() {
         const { position } = this.props; 
+        const { show } = this.state;
+
+        let node;
+        if (show) {
+            const close = () => this.setState({ show: false });
+            node = (
+                <Box>
+
+                </Box>
+            );
+        }
 
         return(
             <ResponsiveContext.Consumer>
@@ -14,38 +35,69 @@ class Main extends Component {
                         gridArea={position}
                         columns={responsive !== 'small'
                         ? ['small', 'flex', 'small']
-                        : ['small', 'small']}
+                        : ['flex']}
                         rows={['flex']}
-                        areas={[{ name: 'menu', start: [1, 0], end: [1, 0] }]}
+                        areas={responsive !== 'small' 
+                        ? [{ name: 'menu', start: [1, 0], end: [1, 0] }]
+                        : [{ name: 'menu', start: [0, 0], end: [0, 0] }]}
                     >
-                        <Box
-                            fill
-                            responsive
-                            align='center'
-                            direction='row-reverse'
-                            gap='xlarge'
-                            gridArea='menu'
-                            justify='around'
-                        >
+                        {responsive !== 'small' 
+                        ? (
                             <Box
+                                fill
                                 responsive
+                                align='center'
+                                direction='row-reverse'
+                                gap='xlarge'
+                                gridArea='menu'
+                                justify='around'
+                            >
+                                <Box
+                                    responsive
+                                    direction='row'
+                                    gap='medium'
+                                    justify='evenly'
+                                    pad='large'
+                                >
+                                    <RoutedAnchor color='background' path='/' label='Home' />
+                                    <RoutedAnchor color='background' path='/about' label='About' />
+                                    <RoutedAnchor color='background' path='/updates-blog' label='Versions' />
+                                    <RoutedAnchor color='background' path='/donate' label='Donate' />
+                                    <RoutedAnchor color='background' path='/report-comment' label='Report' />
+                                </Box>
+                                <Box
+                                    responsive
+                                    pad='small'
+                                >
+                                    <RoutedAnchor path='/'><Heading responsive level={3} color='background'>farbenite.</Heading></RoutedAnchor>
+                                </Box>
+                            </Box>
+                        )
+                        : (
+                            <Box
+                                fill
+                                responsive
+                                align='center'
                                 direction='row'
                                 gap='medium'
-                                justify='evenly'
-                                pad='large'
+                                gridArea='menu'
+                                justify='around'
                             >
-                                <RoutedAnchor color='background' path='/' label='Home' />
-                                <RoutedAnchor color='background' path='/about' label='About' />
-                                <RoutedAnchor color='background' path='/updates-blog' label='Versions' />
-                                <RoutedAnchor color='background' path='/donate' label='Donate' />
+                                <Box
+                                    responsive
+                                    pad='xsmall'
+                                >
+                                    <RoutedAnchor path='/'><Heading responsive level={2} color='background'>farbenite.</Heading></RoutedAnchor>
+                                </Box>
+                                <Box
+                                    responsive
+                                    pad='xsmall'
+                                >
+                                    <Button icon={<Menu color='background' />} onClick={() => this.setState({ show: true })} />
+                                </Box>
                             </Box>
-                            <Box
-                                responsive
-                                pad='small'
-                            >
-                                <Heading responsive level={3} color='background'>farbenite.</Heading>
-                            </Box>
-                        </Box>
+                        )
+                        }
                     </Grid>
                 )}
             </ResponsiveContext.Consumer>

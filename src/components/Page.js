@@ -1,5 +1,5 @@
 import React, { Children, Component } from 'react';
-import { Box, Grid, InfiniteScroll, ResponsiveContext } from 'grommet';
+import { Box, Grid, ResponsiveContext } from 'grommet';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -75,7 +75,7 @@ class Main extends Component {
                             responsive
                             gridArea='footer'
                         >
-                            <Footer position='footer' color='brand' />
+                            <Footer position='footer' />
                         </Box>
                     </Grid>
                 )}

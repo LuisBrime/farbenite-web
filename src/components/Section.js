@@ -4,7 +4,7 @@ import { Card } from 'grommet-controls';
 
 class Section extends Component {
     render() {
-        const { position, children, title, ...rest } = this.props;
+        const { position, children } = this.props;
 
         return(
             <Box
