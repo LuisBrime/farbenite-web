@@ -1,19 +1,8 @@
 import React, { Component } from 'react';
-import { Anchor, Box, Grid, Heading, Image, ResponsiveContext } from 'grommet';
+import { Box, Grid, Heading, ResponsiveContext } from 'grommet';
+import RoutedAnchor from '../components/RoutedAnchor';
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-
-        this.onClick = this.onClick.bind(this);
-    }
-
-    onClick(event) {
-        event.preventDefault();
-        console.log(event.target.href);
-        window.history.pushState(undefined, undefined, event.target.href);
-    }
-
     render() {
         const { position } = this.props; 
 
@@ -45,9 +34,10 @@ class Main extends Component {
                                 justify='evenly'
                                 pad='large'
                             >
-                                <Anchor color='background' href='/' onClick={this.onClick} label='Home' />
-                                <Anchor color='background' href='/about' onClick={this.onClick} label='About' />
-                                <Anchor color='background' href='/donate' onClick={this.onClick} label='Donate' />
+                                <RoutedAnchor color='background' path='/' label='Home' />
+                                <RoutedAnchor color='background' path='/about' label='About' />
+                                <RoutedAnchor color='background' path='/updates-blog' label='Versions' />
+                                <RoutedAnchor color='background' path='/donate' label='Donate' />
                             </Box>
                             <Box
                                 responsive

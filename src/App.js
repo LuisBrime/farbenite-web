@@ -1,14 +1,17 @@
 import React from 'react';
+import { Router } from './Router';
 import { Grommet } from 'grommet';
 
 import { theme } from './theme';
-import Page from './components/Page';
+import Routerino from './components/Routerino';
 
 function App() {
   return (
-    <Grommet theme={theme} full>
-      <Page />
-    </Grommet>
+    <Router>
+      <Grommet theme={theme} full>
+        <Routerino />
+      </Grommet>
+    </Router>
   );
 }
 

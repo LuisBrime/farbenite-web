@@ -15,6 +15,8 @@ class Footer extends Component {
                 direction='column'
                 gap='medium'
                 gridArea={position}
+                margin='small'
+                pad='small'
             >
                 <Box
                     responsive
