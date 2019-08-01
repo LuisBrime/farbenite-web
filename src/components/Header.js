@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Box, Button, Grid, Heading, ResponsiveContext } from 'grommet';
-import { Menu } from 'grommet-icons';
+import { Box, Button, Grid, Heading, Layer, ResponsiveContext } from 'grommet';
+import { Menu, Close } from 'grommet-icons';
 
 import RoutedAnchor from '../components/RoutedAnchor';
 
@@ -21,9 +21,30 @@ class Main extends Component {
         if (show) {
             const close = () => this.setState({ show: false });
             node = (
-                <Box>
-
-                </Box>
+                <Layer
+                    full='horizontal'
+                    position='top'
+                    responsive={false}
+                    onEsc={close}
+                    onClickOutside={close}
+                >
+                    <Box
+                        align='center'
+                        direction='column'
+                        pad='small'
+                    >
+                        <Box margin='small'>
+                            <Button icon={<Close color='brand' />} onClick={close} />
+                        </Box>
+                        <Box aling='start' alignSelf='start' margin='small' gap='large'>
+                            <RoutedAnchor color='brand' path='/' label='Home' />
+                            <RoutedAnchor color='brand' path='/about' label='About' />
+                            <RoutedAnchor color='brand' path='/updates-blog' label='Versions' />
+                            <RoutedAnchor color='brand' path='/donate' label='Donate' />
+                            <RoutedAnchor color='brand' path='/report-comment' label='Report' />
+                        </Box>
+                    </Box>
+                </Layer>
             );
         }
 
@@ -83,6 +104,7 @@ class Main extends Component {
                                 gridArea='menu'
                                 justify='around'
                             >
+                                {node}
                                 <Box
                                     responsive
                                     pad='xsmall'

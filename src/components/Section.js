@@ -11,7 +11,6 @@ class Section extends Component {
                 responsive
                 wrap
                 animation='fadeIn'
-                flex='grow'
                 gridArea={position}
                 margin='small'
             >
