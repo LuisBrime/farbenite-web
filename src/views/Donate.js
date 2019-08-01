@@ -27,7 +27,7 @@ class Donate extends Component {
                         <Button 
                             color='neutral-5' 
                             hoverIndicator='light-2' 
-                            href='https://www.paypal.com/luisbrime' 
+                            href='https://www.paypal.me/luisbrime' 
                             icon={<Paypal color='neutral-5' />} 
                             label='Paypal' 
                             plain={true}
