@@ -3,6 +3,7 @@ import { Anchor, Box, Button, Heading, Paragraph } from 'grommet';
 import { Github } from 'grommet-icons';
 
 import Page from '../components/Page';
+import img from '../utils/first_palette.jpeg'
 
 class Versions extends Component {
     render() {
@@ -50,13 +51,17 @@ class Versions extends Component {
                     direction='column'
                     gap='medium'
                 >
-                    <Heading level={4} color='brand'>Version 0.1.1</Heading>
-                </Box>
-                <Box
-                    direction='column'
-                    gap='medium'
-                >
                     <Heading level={4} color='brand'>Version 0.1.0</Heading>
+                    <Paragraph color='dark-3' margin='none'>
+                        First version of <b>farbenite</b>.<br/><br/>
+                        <b>Features:</b><br/>
+                        &nbsp; -  Tweets generated color palettes every 24 hrs.<br/>
+                        &nbsp; -  Favorite another user's mentions.<br/><br/>
+                        <b>Fixes after test:</b><br/>
+                        &nbsp; - Color palettes' images display beautiful HEX code.<br/><br/>
+                        This was my first tweeted color palette as a test!<br/>
+                    </Paragraph>
+                    <Box alignSelf='center' background={`url(${img})`} fill='horizontal' pad='xlarge' />
                 </Box>
             </Page>
         );

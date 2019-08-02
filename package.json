@@ -1,10 +1,11 @@
 {
   "name": "farbenite-web",
-  "version": "0.2.0",
+  "version": "0.2.5",
   "private": true,
   "dependencies": {
-    "@aws-amplify/api": "^1.0.39",
-    "@aws-amplify/pubsub": "^1.0.30",
+    "@aws-amplify/api": "^1.0.41",
+    "@aws-amplify/pubsub": "^1.0.32",
+    "emailjs-com": "^2.3.2",
     "grommet": "^2.7.4",
     "grommet-controls": "^1.1.21",
     "grommet-icons": "^4.2.0",

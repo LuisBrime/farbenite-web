@@ -14,6 +14,6 @@ export default () => (
         <Route exact path='/about' component={About} />
         <Route exact path='/donate' component={Donate} />
         <Route exact path='/report-comment' component={Report} />
-        <Route exact path='/updates-blog' component={Versions} />
+        <Route exact path='/versions-log' component={Versions} />
     </Routes>
 );

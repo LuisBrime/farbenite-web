@@ -4,9 +4,36 @@ import { EmailInputField, Form, TextAreaField, validators } from 'grommet-contro
 import { Send } from 'grommet-icons';
 
 import Page from '../components/Page';
+import { config } from '../utils/emailjs_config';
+
+const emailjs = require('emailjs-com');
 
 class Report extends Component {
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(event) {
+        console.log(event);
+
+        var template_params = {
+            'reply_to': event.email,
+            'from_name': event.email,
+            'to_name': 'luisbrime@farbenite.xyz',
+            'message_html': event.comment
+        };
+
+        emailjs.send(config.service_id, config.template_id, template_params, config.userID)
+            .then(response => {
+                console.log('Success! ', response.status, response.text);
+            }, err => {
+                console.log('Failed... ', err);
+            });
+    }
+
     render() {
+
         return(
             <Page>
                 <Box
@@ -23,9 +50,9 @@ class Report extends Component {
                     direction='column'
                     gap='medium'
                 >
-                    <Form gap='medium'>
+                    <Form gap='medium' onSubmit={this.handleSubmit}>
                         <EmailInputField color='dark-3' name='email' label='Email' validation={[validators.required(), validators.email()]} />
-                        <TextAreaField name='comment' label='Report or comment' size='large' validation={[validators.required()]} />
+                        <TextAreaField name='comment' label='Report or comment' resize={false} size='large' validation={[validators.required()]} />
                         <Box align='end' pad={{ vertical: 'medium' }}>
                             <Button 
                                 color='brand' 

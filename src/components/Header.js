@@ -39,7 +39,7 @@ class Main extends Component {
                         <Box aling='start' alignSelf='start' margin='small' gap='large'>
                             <RoutedAnchor color='brand' path='/' label='Home' />
                             <RoutedAnchor color='brand' path='/about' label='About' />
-                            <RoutedAnchor color='brand' path='/updates-blog' label='Versions' />
+                            <RoutedAnchor color='brand' path='/versions-log' label='Versions' />
                             <RoutedAnchor color='brand' path='/donate' label='Donate' />
                             <RoutedAnchor color='brand' path='/report-comment' label='Report' />
                         </Box>
@@ -82,7 +82,7 @@ class Main extends Component {
                                 >
                                     <RoutedAnchor color='background' path='/' label='Home' />
                                     <RoutedAnchor color='background' path='/about' label='About' />
-                                    <RoutedAnchor color='background' path='/updates-blog' label='Versions' />
+                                    <RoutedAnchor color='background' path='/versions-log' label='Versions' />
                                     <RoutedAnchor color='background' path='/donate' label='Donate' />
                                     <RoutedAnchor color='background' path='/report-comment' label='Report' />
                                 </Box>

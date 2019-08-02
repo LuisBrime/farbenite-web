@@ -11,8 +11,7 @@ class Footer extends Component {
                 {responsive => (
                     <Box
                         responsive
-                        align='end'
-                        alignContent='stretch'
+                        align='center'
                         alignSelf='center'
                         direction={responsive !== 'small' ? 'row' : 'column'}
                         gap='medium'
@@ -33,16 +32,6 @@ class Footer extends Component {
                                     Made with <Favorite color='brand' size='small' /> by <Anchor color='brand' target='_blank' href='https://github.com/LuisBrime' label='Luis Brime' />
                                 </Text>
                             </Box>
-                           {/* 
-                            <Box
-                                responsive
-                                justify='center'
-                            >
-                                <Text size='small' margin='none' color='dark-2'>
-                                    Give some love to <Anchor color='brand' target='_blank' href='http://colormind.io/' label='Colormind' />
-                                </Text>
-                            </Box>
-                            */}
                         </Box>
                         <Box
                             responsive
