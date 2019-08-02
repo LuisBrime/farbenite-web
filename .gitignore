@@ -33,5 +33,3 @@ dist/
 node_modules/
 aws-exports.js
 awsconfiguration.json
-
-src/utils/emailjs_config.js
