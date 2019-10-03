@@ -49,6 +49,21 @@ class Versions extends Component {
                     </Box>
                 </Box>
 
+                {/* VERSION 0.1.2.1 */}
+                <Box
+                    direction='column'
+                    gap='medium'
+                >
+                    <Heading level={4} color='brand'>Version 0.1.2.1</Heading>
+                    <Paragraph color='dark-3' margin='none'>
+                        <b>Stand by:</b><br/>
+                        &nbsp; – Returned to first functionality; only tweeting once every 2 hours.<br />
+                        &nbsp; – Only favorite mentions.<br />
+                        Problems with headless Programming without having a terminal open, until fixed 
+                        functionality will be limited to this and hopefully will work just fine.
+                    </Paragraph>
+                </Box>
+
                 {/* VERSION 0.1.2 */}
                 <Box
                     direction='column'

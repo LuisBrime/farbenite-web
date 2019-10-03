@@ -1,6 +1,6 @@
 {
   "name": "farbenite-web",
-  "version": "0.2.5",
+  "version": "0.2.5.1",
   "private": true,
   "dependencies": {
     "@aws-amplify/api": "^1.0.41",
