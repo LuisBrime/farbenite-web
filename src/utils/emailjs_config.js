@@ -1,5 +1,5 @@
 export const config = {
-    service_id: 'default_service',
-    template_id: 'template_24wHqoEl',
-    userID: 'user_cIuGPOmVriezDkJGFMlGE'
+    service_id: 'XXXXXX',
+    template_id: 'XXXXXX',
+    userID: 'XXXXX'
 };
